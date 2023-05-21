@@ -7,7 +7,7 @@ const getSightings = () => {
             return resolve(res);
         }).catch((err) => {
             console.log('Error', err);
-            return resolve(err.data);
+            return reject(err);
         });
     });
 }

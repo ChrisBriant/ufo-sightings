@@ -3,6 +3,7 @@ import { useState } from "react";
 
 const SightingsScreen = (props) => {
     const [selectedSighting, setSelectedSighting] = useState(null);
+    const browserWidth = window.innerWidth;
     console.log("FROM THE SIGHTINGS SCREEN", props);
 
     return(
@@ -25,11 +26,25 @@ const SightingsScreen = (props) => {
                 <div className="sightings-detail">
                     {
                         selectedSighting
-                        ? <div className="-sighting-object">
-                            <p>{selectedSighting.location_name}</p>
+                        ? <div className="sighting-object">
+                            <h2><strong>{selectedSighting.location_name}</strong></h2>
+                            <div className="list-item">
+                                <p><strong>Date:</strong></p>
+                                <p>{selectedSighting.occurrence_date}</p>
+                            </div>
+                            <div className="list-item">
+                                <p><strong>Shape:</strong></p>
+                                <p>{selectedSighting.shape}</p>
+                            </div>
+                            <div className="list-item">
+                                <p><strong>Sighting Duration:</strong></p>
+                                <p>{selectedSighting.duration}</p>
+                            </div>
                             <p>{selectedSighting.story}</p>
                         </div>
-                        : <p>Select a sighting from the left to view details.</p>
+                        : browserWidth > 760
+                            ? <p>Select a sighting from the left to view details.</p>
+                            : <p>Select a sighting from the top to view details.</p>
                     }
                 </div>
             </div>

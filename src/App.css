@@ -6,6 +6,24 @@
 
 html,body {
   background: #000;
+  color : #fff;
+}
+
+/* Stylise the Header Page  */
+
+.header {
+  height: 40vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.header h1 {
+  text-align: center;
+  background-color: rgba(38, 13, 13, 0.6);
+  padding: 10px;
+  border-radius: 10px ;
 }
 
 .slider-container {
@@ -14,6 +32,10 @@ html,body {
   padding: 2px;
   box-shadow: inset 2px 3px 3px rgba(0, 0, 0, 0.6); /* Add shadow */
   /* position: relative; */
+}
+
+.center-text {
+  text-align: center;
 }
 
 /* .slider {
@@ -75,8 +97,23 @@ button:hover {
   box-shadow: 1px 2px 2px rgba(150, 150, 150, 0.4); /* Add shadow */
 }
 
+button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
 .sightings-screen {
   color: #fff;
+}
+
+.sightings-screen h1 {
+  text-align: center;
+}
+
+.sightings-screen-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .sightings-panel {
@@ -96,9 +133,36 @@ button:hover {
 .sighting-list-item {
   cursor: pointer;
   font-weight: bold;
+  margin-bottom: 10px;
   transition: color 0.3s ease,
 }
 
 .sighting-list-item:hover {
   color: #828aff;
+}
+
+.sighting-object div, .sighting-object h2 {
+  margin-bottom: 10px;
+}
+
+.list-item {
+  display: flex;
+}
+
+.list-item p {
+  padding-right: 10px;
+}
+
+
+@media(max-width: 760px) {
+  .sightings-panel {
+    flex-wrap: wrap;
+    justify-content: center;
+  }  
+
+  .sightings-list, .sightings-detail {
+    width: 100%;
+    min-height: 0;
+    margin: 10px;
+  }
 }

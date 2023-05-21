@@ -8,8 +8,11 @@ const SightingsList = (props) => {
                     props.sightings
                     ? <p>{props.sightings.length > 1 ? <>{props.sightings.length} sightings</> : <>1 sighting</> }</p>
                     : <p>No Sightings</p>   
-                } 
-                <button onClick={() => props.setShowSightingsScreen({heading:props.heading, sightings: props.sightings})}>View Sightings</button>
+                }
+                <button 
+                    onClick={() => props.setShowSightingsScreen({heading:props.heading, sightings: props.sightings})} 
+                    disabled={ !props.sightings }  
+                >View Sightings</button>
             </>
 
         </div>
